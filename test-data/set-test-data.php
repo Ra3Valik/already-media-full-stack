@@ -1,16 +1,16 @@
 <?php
 /**
- * Movie Importer Class
+ * Set Test Data
  *
  * Usage:
  *
  * Run from command line:
- *   php wp-content/themes/your-theme/movie-importer.php
+ *   php wp-content/themes/already-media-full-stack/test-data/set-test-data.php
  */
 
 require_once( 'wp-load.php' );
 
-class MovieImporter
+class TestDataImporter
 {
 	private $json_file;
 	private $images_dir;
@@ -52,12 +52,25 @@ class MovieImporter
 			$this->process_movie( $movie );
 		}
 
+		// Process menu
+		$this->create_main_menu_if_not_exists();
+
 		$this->success( 'Import completed!' );
 	}
 
 	private function process_movie( $movie )
 	{
 		$this->log( "Processing: {$movie['title']}" );
+
+		$movie_exists_query = new WP_Query( [
+			'post_type' => 'movie',
+			'title' => $movie['title'],
+			'posts_per_page' => 1,
+		] );
+		if ( $movie_exists_query->have_posts() ) {
+			$this->warning( "Movie with title = \"{$movie['title']}\" already exists" );
+			return;
+		}
 
 		$post_id = wp_insert_post( [
 			'post_title' => $movie['title'],
@@ -126,6 +139,41 @@ class MovieImporter
 		return $attachment_id;
 	}
 
+	private function create_main_menu_if_not_exists()
+	{
+		$this->log( 'Starting menu creating...' );
+
+		if ( has_nav_menu( 'main-menu' ) ) {
+			$this->warning( 'Main menu already registered' );
+			return;
+		}
+		$menu_name = 'Main Menu';
+		$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+		if ( !$menu_exists ) {
+			$menu_id = wp_create_nav_menu( $menu_name );
+
+			wp_update_nav_menu_item( $menu_id, 0, [
+				'menu-item-title' => 'Main page',
+				'menu-item-url' => home_url( '/' ),
+				'menu-item-status' => 'publish',
+			] );
+
+			wp_update_nav_menu_item( $menu_id, 0, [
+				'menu-item-title' => 'About',
+				'menu-item-url' => '#',
+				'menu-item-status' => 'publish',
+			] );
+
+			$locations = get_theme_mod( 'nav_menu_locations' );
+			$locations['main-menu'] = $menu_id;
+			set_theme_mod( 'nav_menu_locations', $locations );
+			$this->success( 'Menu created.' );
+		} else {
+			$this->warning( 'Menu with name Main Menu already exists' );
+		}
+	}
+
 
 	/*------------------------------------------------------------------------------------*\
 	\|/                                                                                  \|/
@@ -169,6 +217,5 @@ class MovieImporter
 	}
 }
 
-
-$importer = new MovieImporter();
+$importer = new TestDataImporter();
 $importer->run();
