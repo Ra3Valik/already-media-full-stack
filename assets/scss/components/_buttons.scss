@@ -8,6 +8,7 @@
   border-radius: 33px;
   font-weight: $font-weight-base;
   text-decoration: none;
+  display: inline-block;
 
   @include breakpoint-max(mobile) {
     font-size: 10px;
@@ -17,16 +18,26 @@
 .btn--dark {
   background-color: $c-secondary;
   font-size: 14px;
+  font-weight: $font-weight-bold;
   color: $c-white;
 
   @include breakpoint-max(mobile) {
     font-size: 12px;
+  }
+
+  &:hover {
+    background-color: $c-primary;
+    color: $c-secondary;
   }
 }
 
 .btn--link {
   color: $c-primary;
   font-weight: 700;
+
+  &:hover {
+    color: $c-secondary;
+  }
 }
 
 .btn--capitalize {

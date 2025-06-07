@@ -160,7 +160,7 @@ class TestDataImporter
 			] );
 
 			wp_update_nav_menu_item( $menu_id, 0, [
-				'menu-item-title' => 'About',
+				'menu-item-title' => 'Contact',
 				'menu-item-url' => '#',
 				'menu-item-status' => 'publish',
 			] );

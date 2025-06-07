@@ -1,4 +1,4 @@
-<div class="section-intro">
+<section class="section-intro">
     <div class="container intro-section__container">
         <div class="section-intro__content">
             <h1 class="section-intro__title">
@@ -34,4 +34,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

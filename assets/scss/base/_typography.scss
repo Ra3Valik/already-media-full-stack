@@ -10,10 +10,9 @@ body {
   letter-spacing: normal;
 }
 
-h1 {
+h1, h2 {
   font-weight: $font-weight-bold;
   font-size: 48px;
-  vertical-align: middle;
   color: $c-secondary;
 
   @include breakpoint-max(mobile) {
