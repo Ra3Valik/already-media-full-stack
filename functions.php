@@ -8,8 +8,7 @@
 function r3_enqueue_assets()
 {
 	wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/dist/style.css' );
-	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/dist/main.js', [], null, true );
-	wp_enqueue_script( 'flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', [], null, true );
+	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/dist/main.js' );
 }
 
 add_action( 'wp_enqueue_scripts', 'r3_enqueue_assets' );

@@ -16,8 +16,6 @@
         </div>
         <div class="section-intro__image-block">
             <div class="popcorn-image">
-                <div class="ellipse-bg"></div>
-
                 <div class="circle-bg"></div>
 
                 <img src="<?= get_theme_file_uri( 'assets/img/popcorn.png' ) ?>" alt="Popcorn" class="section-intro__image" />

@@ -23,8 +23,8 @@
 			if ( has_nav_menu( 'main-menu' ) ) {
 				wp_nav_menu( [
 					'theme_location' => 'main-menu',
-					'container' => 'nav',
-					'container_class' => 'desktop-menu',
+					'container' => false,
+					'menu_class'      => 'menu',
 					'depth' => 3,
 				] );
 			} else {
@@ -32,5 +32,13 @@
 			}
 			?>
         </nav>
+
+        <div class="menu-overlay"></div>
+
+        <button class="burger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </div>

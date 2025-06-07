@@ -25,6 +25,10 @@
     margin-top: 20px;
     max-width: 400px;
     color: $c-light;
+
+    @include breakpoint-max(mobile) {
+      font-size: 14px;
+    }
   }
 
   &__buttons {
@@ -45,10 +49,12 @@
   .popcorn-image {
     position: relative;
     max-width: 350.11px;
-    @include breakpoint-max(mobile) {
-      width: 350 * 0.8px
-    }
+    width: 350.11px;
     aspect-ratio: 1 / 1;
+
+    @include breakpoint-max(mobile) {
+      width: 350.11 * 0.8px
+    }
 
     img {
       display: block;
@@ -64,13 +70,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       max-width: 416px;
-      @include breakpoint-max(mobile) {
-        width: 416 * 0.8px
-      }
+      width: 416px;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       background-color: $c-secondary;
-      z-index: 1;
+      z-index: 0;
+
+      @include breakpoint-max(mobile) {
+        width: 416 * 0.8px
+      }
     }
 
     .badge-wrapper {
@@ -98,6 +106,7 @@
 
         .badge {
           min-width: 277px;
+
           @include breakpoint-max(mobile) {
             min-width: 277 * 0.8px
           }
@@ -117,6 +126,7 @@
 
         .badge {
           padding: 14px 57px 16px 57px;
+
           @include breakpoint-max(mobile) {
             padding: 9px 45px 10px 45px;
           }
@@ -125,10 +135,6 @@
 
       .badge {
         padding: 14px 27px 13px 27px;
-        @include breakpoint-max(mobile) {
-          padding: 10px 20px 9px 20px;
-        }
-
         font-family: $ff-poppins;
         font-weight: $font-weight-bold;
         font-size: 24px;
@@ -138,10 +144,13 @@
         background-color: $c-white;
         margin: 6px 6px;
         justify-content: center;
-
         display: flex;
         align-items: center;
         gap: 4px;
+
+        @include breakpoint-max(mobile) {
+          padding: 10px 20px 9px 20px;
+        }
       }
     }
 

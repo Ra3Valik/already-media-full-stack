@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use "../utils/mixins" as *;
 
 body {
   font-family: $ff-roboto;
@@ -14,6 +15,10 @@ h1 {
   font-size: 48px;
   vertical-align: middle;
   color: $c-secondary;
+
+  @include breakpoint-max(mobile) {
+    font-size: 36px;
+  }
 }
 
 .highlight {

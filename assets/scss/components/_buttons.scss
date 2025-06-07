@@ -1,16 +1,27 @@
 @use '../utils/variables' as *;
+@use "../utils/mixins" as *;
 
 .btn {
   font-family: $ff-poppins;
   padding: 12px 32px;
+  font-size: 12px;
   border-radius: 33px;
   font-weight: $font-weight-base;
   text-decoration: none;
+
+  @include breakpoint-max(mobile) {
+    font-size: 10px;
+  }
 }
 
 .btn--dark {
   background-color: $c-secondary;
+  font-size: 14px;
   color: $c-white;
+
+  @include breakpoint-max(mobile) {
+    font-size: 12px;
+  }
 }
 
 .btn--link {

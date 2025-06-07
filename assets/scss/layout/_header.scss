@@ -12,6 +12,9 @@
     gap: 289px;
     align-items: center;
 
+    @include breakpoint-max(mobile) {
+      gap: 0;
+    }
 
     .logo {
       position: relative;
@@ -57,6 +60,99 @@
             }
           }
         }
+      }
+    }
+
+    .burger {
+      display: none;
+      width: 32px;
+      height: 24px;
+      position: relative;
+      z-index: 100;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $c-black;
+        border-radius: 2px;
+        transition: 0.3s ease;
+
+        &:nth-child(1) {
+          top: 0;
+        }
+        &:nth-child(2) {
+          top: 11px;
+        }
+        &:nth-child(3) {
+          top: 22px;
+        }
+      }
+
+      &.menu-open {
+        span:nth-child(1) {
+          transform: rotate(45deg);
+          top: 11px;
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 11px;
+        }
+      }
+    }
+
+
+    @include breakpoint-max(mobile) {
+      .desktop-menu-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 280px;
+        background: white;
+        transition: transform 0.3s ease;
+        z-index: 99;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+
+        .menu {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li a {
+            font-size: 18px;
+            text-decoration: none;
+            color: $c-black;
+          }
+        }
+      }
+
+      .desktop-menu-wrap.menu-open {
+        padding: 20px;
+        background-color: $c-intro-bg;
+        display: block;
+        transform: translateX(0%);
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08); // ✨ мягкая тень справа
+        border-right: 1px solid rgba(0, 0, 0, 0.05); // ✨ лёгкая правая граница
+      }
+
+      .burger {
+        display: block;
+        z-index: 100;
+        margin-left: auto;
       }
     }
   }
