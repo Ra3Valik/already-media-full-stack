@@ -1,0 +1,63 @@
+@use '../utils/variables' as *;
+@use "../utils/mixins" as *;
+
+.header-bar {
+  background-color: $c-intro-bg;
+
+  .navbar {
+    @include content-container;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 289px;
+    align-items: center;
+
+
+    .logo {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 39px;
+        height: 39px;
+      }
+
+      a {
+        font-size: 18px;
+        color: $c-black;
+        gap: 3px;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+      }
+    }
+
+    .desktop-menu-wrap {
+      .menu {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          &.current-menu-item {
+            a {
+              color: $c-primary;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: $c-black;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

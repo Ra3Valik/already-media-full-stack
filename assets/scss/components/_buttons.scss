@@ -1,0 +1,23 @@
+@use '../utils/variables' as *;
+
+.btn {
+  font-family: $ff-poppins;
+  padding: 12px 32px;
+  border-radius: 33px;
+  font-weight: $font-weight-base;
+  text-decoration: none;
+}
+
+.btn--dark {
+  background-color: $c-secondary;
+  color: $c-white;
+}
+
+.btn--link {
+  color: $c-primary;
+  font-weight: 700;
+}
+
+.btn--capitalize {
+  text-transform: uppercase;
+}

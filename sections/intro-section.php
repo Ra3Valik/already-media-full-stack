@@ -1,25 +1,39 @@
 <div class="section-intro">
-	<div class="section-intro__content">
-        <h1 class="section-intro__title">
-            Explore a <span class="highlight">World</span> of <br />Cinematic Wonders
-        </h1>
+    <div class="container intro-section__container">
+        <div class="section-intro__content">
+            <h1 class="section-intro__title">
+                Explore a <span class="highlight">World</span> of <br />Cinematic Wonders
+            </h1>
 
-        <p class="section-intro__description">
-            Our database not only includes blockbusters but also independent films, documentary features, and works from talented directors worldwide.
-        </p>
+            <p class="section-intro__description">
+                Our database not only includes blockbusters but also independent films, documentary features, and works from talented directors worldwide.
+            </p>
 
-        <div class="section-intro__buttons">
-            <a href="#" class="button button--dark">Register Now</a>
-            <a href="#" class="link">About us</a>
+            <div class="section-intro__buttons">
+                <a href="#" class="btn btn--dark btn--capitalize">Register Now</a>
+                <a href="#" class="btn btn--link">About us</a>
+            </div>
         </div>
-    </div>
-    <div class="section-intro__image-block">
-        <img src="<?= get_theme_file_uri( 'assets/img/popcorn.png' ) ?>" alt="Popcorn" class="section-intro__image" />
+        <div class="section-intro__image-block">
+            <div class="popcorn-image">
+                <div class="ellipse-bg"></div>
 
-        <div class="badge badge--top">MovieHub</div>
+                <div class="circle-bg"></div>
 
-        <div class="badge badge--rating">4.8 <span class="star">★</span></div>
+                <img src="<?= get_theme_file_uri( 'assets/img/popcorn.png' ) ?>" alt="Popcorn" class="section-intro__image" />
 
-        <div class="badge badge--bottom">18K</div>
+                <div class="badge-wrapper badge-wrapper--top">
+                    <div class="badge">MovieHub</div>
+                </div>
+
+                <div class="badge-wrapper badge-wrapper--right">
+                    <div class="badge">4.8 <?= file_get_contents( get_theme_file_path( 'assets/img/akar-icons_star.svg' ) ) ?></div>
+                </div>
+
+                <div class="badge-wrapper badge-wrapper--bottom">
+                    <div class="badge">18K</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,0 +1,22 @@
+@use '../utils/variables' as *;
+
+body {
+  font-family: $ff-roboto;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $c-black;
+  letter-spacing: normal;
+}
+
+h1 {
+  font-weight: $font-weight-bold;
+  font-size: 48px;
+  vertical-align: middle;
+  color: $c-secondary;
+}
+
+.highlight {
+  color: $c-primary;
+}
+

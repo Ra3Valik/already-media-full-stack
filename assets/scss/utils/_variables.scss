@@ -1,0 +1,24 @@
+// Colors
+$c-primary: #FF902B;
+$c-secondary: #2F2105;
+$c-accents: #F9D9AA;
+$c-glass: #F9D9AA;
+$c-light: #7E7D7A;
+$c-intro-bg: #F6EBDA;
+$c-black: #000000;
+$c-white: #FFFFFF;
+
+// Fonts
+$font-size-base: 16px;
+$font-weight-base: 400;
+$font-weight-bold: 600;
+$line-height-base: 1;
+$ff-roboto: 'Roboto', sans-serif;
+$ff-poppins: 'Poppins', sans-serif;
+
+// Breakpoints
+$breakpoints: (
+    mobile: 768px,
+);
+
+$max-width-default: 1440px;
