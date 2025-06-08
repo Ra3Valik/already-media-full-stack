@@ -58,7 +58,7 @@ $total_pages = $query->max_num_pages;
                             </select>
                         </div>
 
-                        <input type="hidden" name="orderby" id="orderby-hidden">
+                        <input type="hidden" name="orderby" id="orderby-hidden" value="<?= $_GET['orderby'] ?? '' ?>">
                     </div>
 
                     <button class="btn btn--dark btn--capitalize filter-apply">Apply</button>

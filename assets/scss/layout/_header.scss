@@ -145,8 +145,8 @@
         background-color: $c-intro-bg;
         display: block;
         transform: translateX(0%);
-        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08); // ✨ мягкая тень справа
-        border-right: 1px solid rgba(0, 0, 0, 0.05); // ✨ лёгкая правая граница
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
       }
 
       .burger {
@@ -154,6 +154,15 @@
         z-index: 100;
         margin-left: auto;
       }
+    }
+  }
+}
+
+body.admin-bar {
+  .header-bar .desktop-menu-wrap {
+    @include breakpoint-max(mobile) {
+      top: 46px;
+      height: calc(100% - 46px);
     }
   }
 }
